@@ -1,0 +1,70 @@
+<div *ngIf="error" class="alert alert-warning" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span> {{error}}
+</div>
+
+<div class="log-container">
+  <a [routerLink]="['/']">
+    <div class="logo">
+    </div>
+  </a>
+
+  <div class="register">
+    <h2 class="text-center">
+      Registrate gratis en Jiuvii!
+    </h2>
+
+    <form (submit)="register($event, name.value, email.value, password.value)">
+      <input #name type="text" id="name" name="name" value="" placeholder="Nombre" class="input-lg">
+      <input name="lastname" value="" placeholder="Apellido" class="input-lg">
+      <input #email type="email" id="email" name="email" value="" placeholder="Email" class="input-lg">
+      <input #password type="password" id="inputPassword" name="password" value="" placeholder="Contraseña (min 6 caracteres)"
+        class="input-lg">
+
+        <button class="btn btn-block btn-wide btn-primary register-me" type="submit">Registrarme</button>
+
+        <hr/>
+
+        <a (click)="loginWithFacebook()" class="btn btn-block btn-facebook">
+          <i class="fa fa-facebook-square fa-lg"></i> Ingresa con Facebook
+        </a>
+
+        <a (click)="loginWithGoogle()" class="btn btn-block btn-google">
+          <i class="fa fa-google-plus-square fa-lg"></i> Ingresa con Google
+        </a>
+    </form>
+    <div class="text-center margin">
+      <h5>
+        ¿Ya tenés cuenta?
+        <a [routerLink]="['/login']">Iniciar sesion</a>
+      </h5>
+      <h5>
+        Cuando creas una cuenta, aceptas los
+        <a href="#">términos y condiciones</a> y las
+        <a href="#">políticas de privacidad</a> de Jiuvii.
+      </h5>
+    </div>
+  </div>
+
+  <div class="register-confirm hide">
+    <h2 class="text-center">
+      Confirma tu domicilio de entrega
+    </h2>
+
+    <form>
+      <input name="address" value="" placeholder="Direccion" type="text" class="input-lg">
+      <input name="city" value="" placeholder="Ciudad" type="text" class="input-lg">
+      <input name="state" value="" placeholder="Provincia" type="text" class="input-lg">
+      <input name="zipcode" value="" placeholder="Codigo Postal" type="text" class="input-lg">
+      <input name="country" value="" placeholder="Pais" type="text" class="input-lg">
+      <input name="phone" value="" placeholder="Telefono" type="text" class="input-lg">
+
+      <a href="index.html" class="btn btn-block btn-wide btn-primary">
+						Confirmar
+					</a>
+      <a href="index.html" class="btn btn-block btn-wide btn-primary-invert">
+						Omitir
+					</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<nav id="includeNavPrimary" class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Jiuvii</a>
+    </div>
+
+    <div *ngIf="isLoggedIn">
+      <ul class="nav navbar-nav navbar-right border-left">
+        <li><a (click)="logout()" style="cursor: pointer;">Salir</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>{{afService.displayName}}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<!-- background -->
+<div class="page-bk login-bk">
+</div>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- MODALS -->
+<div id="includeModals"></div>
